@@ -5,7 +5,10 @@
   "main": "rollup.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint --ext .ts,.tsx,.js .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
+    "demo": "node demo/test.js"
   },
   "author": "mike",
   "license": "ISC",
@@ -18,6 +21,10 @@
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
     "axios": "^0.24.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
     "rollup": "^2.59.0",
     "rollup-plugin-terser": "^7.0.2"
   }
