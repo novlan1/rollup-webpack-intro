@@ -5,8 +5,8 @@ import json from '@rollup/plugin-json';
 import replace from '@rollup/plugin-replace';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
-import virtualModule from './src/plugin/virtual-module';
-import removeConsole from './src/plugin/remove-console';
+import virtualModule from './rollup/src/plugin/virtual-module';
+import removeConsole from './rollup/src/plugin/remove-console';
 
 const banner = `/*!
  * ${pkg.name} v${pkg.version}
@@ -19,13 +19,13 @@ const footer = `/*!
  */`;
 
 export default [{
-  input: ['./src/index.js'],
+  input: ['./rollup/src/index.js'],
   output: {
     banner,
     footer,
     intro: '// This is intro.',
     outro: '// This is outro.',
-    file: './dist/bundle.js',
+    file: './rollup/dist/bundle.js',
     format: 'umd',
     name: 'mybundle',
   },
@@ -42,7 +42,7 @@ export default [{
     babel(),
     // terser(),
     virtualModule(),
-    removeConsole(),
+    // removeConsole(),
   ],
   external: ['axios'],
   onwarn(warning) {
