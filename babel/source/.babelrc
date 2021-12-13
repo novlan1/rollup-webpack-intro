@@ -1,0 +1,48 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // "modules": "cjs",
+        "useBuiltIns": "usage",
+        "corejs": 2,
+        // "loose": false,
+        // "targets": "chrome 79",
+        // "debug": true,
+      }
+    ],
+    [
+      "./presets/preset1.js"
+    ],
+    [
+      "./presets/preset2.js"
+    ],
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        // "corejs": 3,
+        "helpers": false,
+        "regenerator": false,
+      }
+    ],
+    [
+      "./plugins/babel-plugin-word-replace"
+    ],
+    [
+      "./plugins/babel-plugin-replace-return"
+    ]
+  ]
+  // "plugins": [
+  //   [
+  //     "@babel/plugin-transform-runtime",
+  //     {
+  //       "corejs": false
+  //     }
+  //   ],
+  // [
+  //   "./plugins/PluginTest1.js"
+  // ]
+  // ]
+}

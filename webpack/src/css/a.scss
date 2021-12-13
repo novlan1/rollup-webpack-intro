@@ -1,0 +1,9 @@
+/* @import './b.css';  */
+.a {
+  font-size: 16px;
+}
+
+$color: red;
+#test {
+  color: $color;
+}
